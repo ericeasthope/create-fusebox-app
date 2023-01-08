@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title></title>
+    $css
 
-<head>
-  <title></title>
-  $css
-</head>
+    <!-- KaTeX -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css"
+      integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET"
+      crossorigin="anonymous"
+    />
 
-<body>
-  <div id="root"></div>
-  $bundles
-</body>
+    <!-- Defer loading of KaTeX to speed up page rendering -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js"
+      integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb"
+      crossorigin="anonymous"
+    ></script>
 
+    <!-- Automatically render KaTeX in text elements -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js"
+      integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    $bundles
+
+    <!-- PrismJS syntax highlighting -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+  </body>
 </html>

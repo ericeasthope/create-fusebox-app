@@ -7,26 +7,26 @@ class Context {
       target: "browser",
       entry: "src/index.tsx",
       webIndex: {
-        template: "src/index.html"
+        template: "src/index.html",
       },
-      cache : true,
-      devServer: this.runServer
+      cache: true,
+      devServer: this.runServer,
     });
 }
 const { task } = sparky<Context>(Context);
 
-task("default", async ctx => {
+task("default", async (ctx) => {
   ctx.runServer = true;
   const fuse = ctx.getConfig();
   await fuse.runDev();
 });
 
-task("preview", async ctx => {
+task("preview", async (ctx) => {
   ctx.runServer = true;
   const fuse = ctx.getConfig();
   await fuse.runProd({ uglify: false });
 });
-task("dist", async ctx => {
+task("dist", async (ctx) => {
   ctx.runServer = false;
   const fuse = ctx.getConfig();
   await fuse.runProd({ uglify: false });
